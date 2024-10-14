@@ -1,0 +1,27 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="card shadow-lg" style="width: 20rem;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4">Login</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuário</label>
+          <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="usuario" required>
+        </div>
+        <div class="mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="senha" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar" [(ngModel)]="lembrar">
+          <label class="form-check-label" for="lembrar">Lembrar-me</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+      </form>
+      <p *ngIf="mensagemErro" class="text-danger mt-3 text-center">{{ mensagemErro }}</p>
+    </div>
+    <div class="text-center mt-3">
+      <p>Não tem uma conta?</p>
+      <a routerLink="/cadastrar" class="btn-cadastrar">Cadastrar-se</a>
+    </div>
+  </div>
+</div>
